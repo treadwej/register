@@ -71,7 +71,9 @@ object Register extends App {
         println(if (change.total == amount) formatCounts(change) else "Sorry.")
       }
 
-      case "quit" :: Nil => System.exit(0)
+      case "quit" :: Nil =>
+        println("Bye.")
+        System.exit(0)
 
       case _ => println("Invalid command!")
     }
@@ -85,6 +87,6 @@ object Register extends App {
   override def toString: String =
     s"$$${register.total} ${formatCounts(register)}"
 
-  println("Register ready...")
+  println("Ready.")
   inputLoop()
 }
